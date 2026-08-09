@@ -1,0 +1,1166 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1 {
+    display: flex;
+    align-items: center;
+}
+
+
+h1 img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f9fc;
+    color: #333;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: white;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+
+nav a:hover {
+    color: #0077b6;
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    color: #0077b6;
+    font-size: 28px;
+    padding: 5px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    background-color: #52b6ec;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+button:hover {
+    background-color: #2b9cd8;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    background-color: #eaf8ff;
+}
+
+
+.hero-content {
+    width: 50%;
+}
+
+
+.hero-content h2 {
+    font-size: 48px;
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+.hero-content button {
+    background-color: #52b6ec;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.hero-content button:hover {
+    background-color: #2b9cd8;
+}
+
+
+.hero-image {
+    width: 45%;
+    text-align: center;
+}
+
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    background-color: white;
+}
+
+
+.about-image {
+    width: 45%;
+}
+
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+
+.about-content {
+    width: 50%;
+}
+
+
+.about-content h2 {
+    font-size: 40px;
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    padding: 80px;
+    background-color: #f5f9fc;
+}
+
+
+.services h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #0077b6;
+    margin-bottom: 50px;
+}
+
+
+.services-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+
+.service-card {
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.service-card h3 {
+    text-align: center;
+    font-size: 28px;
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+
+.service-card p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+.service-card a {
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+}
+
+
+.service-card a:hover {
+    color: #2b9cd8;
+}
+
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why-choose {
+    padding: 80px;
+    background-color: white;
+}
+
+
+.why-choose h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #0077b6;
+    margin-bottom: 50px;
+}
+
+
+.why-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+.why-card {
+    background-color: #f5f9fc;
+    padding: 35px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+
+.why-card h3 {
+    font-size: 28px;
+    color: #0077b6;
+    margin-bottom: 15px;
+}
+
+
+.why-card p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* =========================
+   DOCTORS
+========================= */
+
+.doctors {
+    padding: 80px;
+    background-color: #f5f9fc;
+}
+
+
+.doctors h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #0077b6;
+    margin-bottom: 15px;
+}
+
+
+.doctors-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+
+.doctors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.doctor-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.doctor-card img {
+    width: 180px;
+    margin-right: 30px;
+}
+
+
+.doctor-info {
+    flex: 1;
+}
+
+
+.doctor-info h3 {
+    font-size: 28px;
+    color: #0077b6;
+    margin-bottom: 8px;
+}
+
+
+.qualification {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+
+.specialization {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+.experience {
+    font-size: 17px;
+    color: #2b9c5d;
+    margin-bottom: 20px;
+}
+
+
+.doctor-info button {
+    background-color: #52b6ec;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.doctor-info button:hover {
+    background-color: #2b9cd8;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials {
+    padding: 80px;
+    background-color: white;
+}
+
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #0077b6;
+    margin-bottom: 15px;
+}
+
+
+.testimonials-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+.testimonial-card {
+    display: none;
+    background-color: #f5f9fc;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+
+/* Only the currently selected 3 reviews are visible */
+
+.testimonial-card.active-review {
+    display: block;
+}
+
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.stars {
+    font-size: 24px;
+    color: #f4b400;
+    margin-bottom: 20px;
+}
+
+
+.review {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+
+.testimonial-card h3 {
+    font-size: 22px;
+    color: #0077b6;
+    margin-bottom: 6px;
+}
+
+
+.patient-role {
+    font-size: 16px;
+    color: #777;
+}
+
+
+.reviews-btn {
+    display: block;
+    margin: 40px auto 0;
+    background: none;
+    border: none;
+    color: #0077b6;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.reviews-btn:hover {
+    color: #2b9cd8;
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    padding: 80px;
+    background-color: #f5f9fc;
+}
+
+
+.contact h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #0077b6;
+    margin-bottom: 15px;
+}
+
+
+.contact-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-family: Arial, sans-serif;
+}
+
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+
+.contact-form button {
+    width: fit-content;
+    background-color: #52b6ec;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.contact-form button:hover {
+    background-color: #2b9cd8;
+}
+
+
+.contact-details {
+    flex: 1;
+}
+
+
+.contact-details h3 {
+    font-size: 28px;
+    color: #0077b6;
+    margin-bottom: 25px;
+}
+
+
+.contact-details p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+.appointment-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #0077b6;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+
+.appointment-link:hover {
+    color: #2b9cd8;
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   APPOINTMENT
+========================= */
+
+.appointment {
+    padding: 80px;
+    background: white;
+}
+
+
+.appointment h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #1565c0;
+    margin-bottom: 15px;
+}
+
+
+.appointment .section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+
+.appointment-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+.appointment-form textarea {
+    resize: vertical;
+}
+
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+    outline: none;
+    border-color: #1565c0;
+}
+
+
+.appointment-form button {
+    width: fit-content;
+    padding: 12px 24px;
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.appointment-form button:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   GOOGLE MAP
+========================= */
+
+.map-container {
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background-color: #12355b;
+    color: white;
+    padding: 50px 80px 20px;
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+
+.footer-container > div {
+    flex: 1;
+}
+
+
+.footer h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+.footer p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+.footer-links a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 1024px) {
+
+    nav {
+        padding: 20px 40px;
+    }
+
+
+    .hero,
+    .about,
+    .services,
+    .why-choose,
+    .doctors,
+    .testimonials,
+    .contact,
+    .appointment {
+        padding: 60px 40px;
+    }
+
+
+    .hero-content h2 {
+        font-size: 40px;
+    }
+
+
+    .about-content h2,
+    .services h2,
+    .why-choose h2,
+    .doctors h2,
+    .testimonials h2,
+    .contact h2,
+    .appointment h2 {
+        font-size: 36px;
+    }
+
+
+    .services-container {
+        gap: 20px;
+    }
+
+
+    .why-container {
+        gap: 20px;
+    }
+
+
+    .doctor-card {
+        padding: 20px;
+    }
+
+
+    .doctor-card img {
+        width: 150px;
+        margin-right: 25px;
+    }
+
+
+    .contact-container {
+        gap: 40px;
+    }
+
+
+    .footer {
+        padding: 40px;
+    }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+        position: relative;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        display: none;
+    }
+
+
+    nav button.nav-appointment {
+        display: none;
+    }
+
+
+    .hero {
+        flex-direction: column;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+
+    .hero-content {
+        width: 100%;
+    }
+
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+
+    .hero-image {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+
+    .hero-image img {
+        max-width: 350px;
+    }
+
+
+    .about {
+        flex-direction: column;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+
+    .about-image {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+
+    .about-content {
+        width: 100%;
+    }
+
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+
+    .services {
+        padding: 50px 20px;
+    }
+
+
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    .service-card {
+        padding: 25px;
+    }
+
+
+    .why-choose {
+        padding: 50px 20px;
+    }
+
+
+    .why-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    .doctors {
+        padding: 50px 20px;
+    }
+
+
+    .doctor-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .doctor-card img {
+        width: 160px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+
+    .doctor-info {
+        width: 100%;
+    }
+
+
+    .testimonials {
+        padding: 50px 20px;
+    }
+
+
+    .testimonials-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    .testimonial-card {
+        padding: 25px;
+    }
+
+
+    .contact {
+        padding: 50px 20px;
+    }
+
+
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+
+    .contact-form,
+    .contact-details {
+        width: 100%;
+    }
+
+
+    .appointment {
+        padding: 50px 20px;
+    }
+
+
+    .appointment-form {
+        width: 100%;
+    }
+
+
+    .footer {
+        padding: 40px 20px 20px;
+    }
+
+
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+
+    .footer-links {
+        align-items: center;
+    }
+
+}
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+    h1 img {
+        width: 40px;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+
+
+    nav {
+        padding: 15px;
+    }
+
+
+    nav ul {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+
+    .hero-content h2 {
+        font-size: 30px;
+    }
+
+
+    .hero-content p,
+    .about-content p,
+    .service-card p,
+    .contact-subtitle,
+    .appointment .section-subtitle {
+        font-size: 16px;
+    }
+
+
+    .about-content h2,
+    .services h2,
+    .why-choose h2,
+    .doctors h2,
+    .testimonials h2,
+    .contact h2,
+    .appointment h2 {
+        font-size: 30px;
+    }
+
+
+    .service-card h3 {
+        font-size: 24px;
+    }
+
+
+    .doctor-card img {
+        width: 140px;
+    }
+
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+
+    .contact-form input,
+    .contact-form textarea,
+    .appointment-form input,
+    .appointment-form select,
+    .appointment-form textarea {
+        font-size: 15px;
+    }
+
+}
