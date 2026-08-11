@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealSphere - Doctor Appointment Booking</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER / NAVBAR
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <h1>
+                <img
+                    src="../Task-1/images/logo.png"
+                    alt="HealSphere Logo"
+                >
+                HealSphere
+            </h1>
+
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle">
+                ☰
+            </button>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#doctors">Doctors</a>
+                </li>
+
+                <li>
+                    <a href="#booking">Book Appointment</a>
+                </li>
+
+                <li>
+                    <a href="#history">My Appointments</a>
+                </li>
+
+            </ul>
+
+            <a
+                href="../Task-1/index.html"
+                class="home-btn"
+            >
+                Back to Home
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO SECTION
+        ========================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <h2>
+                    Find the Right Doctor for You
+                </h2>
+
+                <p>
+                    Search for experienced specialists, choose a convenient
+                    time slot, and book your appointment easily with HealSphere.
+                </p>
+
+                <a
+                    href="#doctors"
+                    class="hero-btn"
+                >
+                    Find a Doctor
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DOCTOR SEARCH & FILTER
+        ========================== -->
+
+        <section class="doctor-search" id="search">
+
+            <h2>
+                Find a Doctor
+            </h2>
+
+            <p class="section-subtitle">
+                Search and filter our available specialists.
+            </p>
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="doctorSearch"
+                    placeholder="Search doctor by name..."
+                >
+
+                <select id="departmentFilter">
+
+                    <option value="">
+                        All Departments
+                    </option>
+
+                    <option value="Cardiology">
+                        Cardiology
+                    </option>
+
+                    <option value="Neurology">
+                        Neurology
+                    </option>
+
+                    <option value="ENT">
+                        ENT
+                    </option>
+
+                    <option value="Nephrology">
+                        Nephrology
+                    </option>
+
+                    <option value="Pediatrics">
+                        Pediatrics
+                    </option>
+
+                    <option value="Gynecology">
+                        Gynecology
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DOCTOR LISTINGS
+        ========================== -->
+
+        <section class="doctors" id="doctors">
+
+            <h2>
+                Our Specialists
+            </h2>
+
+            <p class="section-subtitle">
+                Choose from our experienced doctors and specialists.
+            </p>
+
+
+            <div class="doctors-container" id="doctorsContainer">
+
+
+                <!-- DOCTOR 1 -->
+
+                <div
+                    class="doctor-card"
+                    data-name="Dr. Sunaina Sharma"
+                    data-department="Cardiology"
+                >
+
+                    <img
+                        src="../Task-1/images/femaledoc.png"
+                        alt="Dr. Sunaina Sharma"
+                    >
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Sunaina Sharma
+                        </h3>
+
+                        <p class="qualification">
+                            MBBS, MD
+                        </p>
+
+                        <p class="specialization">
+                            Cardiology
+                        </p>
+
+                        <p class="experience">
+                            15+ Years Experience
+                        </p>
+
+                        <p class="fee">
+                            Consultation Fee: ₹800
+                        </p>
+
+                        <p class="availability">
+                            Available: Mon - Fri
+                        </p>
+
+                        <button
+                            class="doctor-btn"
+                            data-doctor="Dr. Sunaina Sharma"
+                        >
+                            View Profile
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOCTOR 2 -->
+
+                <div
+                    class="doctor-card"
+                    data-name="Dr. Shiva Reddy"
+                    data-department="Neurology"
+                >
+
+                    <img
+                        src="../Task-1/images/maledoc.png"
+                        alt="Dr. Shiva Reddy"
+                    >
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Shiva Reddy
+                        </h3>
+
+                        <p class="qualification">
+                            MBBS, DM
+                        </p>
+
+                        <p class="specialization">
+                            Neurology
+                        </p>
+
+                        <p class="experience">
+                            12+ Years Experience
+                        </p>
+
+                        <p class="fee">
+                            Consultation Fee: ₹900
+                        </p>
+
+                        <p class="availability">
+                            Available: Mon - Sat
+                        </p>
+
+                        <button
+                            class="doctor-btn"
+                            data-doctor="Dr. Shiva Reddy"
+                        >
+                            View Profile
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOCTOR 3 -->
+
+                <div
+                    class="doctor-card"
+                    data-name="Dr. Komal Bhatia"
+                    data-department="ENT"
+                >
+
+                    <img
+                        src="../Task-1/images/femaledoc.png"
+                        alt="Dr. Komal Bhatia"
+                    >
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Komal Bhatia
+                        </h3>
+
+                        <p class="qualification">
+                            MBBS, MS
+                        </p>
+
+                        <p class="specialization">
+                            ENT Specialist
+                        </p>
+
+                        <p class="experience">
+                            11+ Years Experience
+                        </p>
+
+                        <p class="fee">
+                            Consultation Fee: ₹700
+                        </p>
+
+                        <p class="availability">
+                            Available: Tue - Sat
+                        </p>
+
+                        <button
+                            class="doctor-btn"
+                            data-doctor="Dr. Komal Bhatia"
+                        >
+                            View Profile
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOCTOR 4 -->
+
+                <div
+                    class="doctor-card"
+                    data-name="Dr. Satish Koul"
+                    data-department="Nephrology"
+                >
+
+                    <img
+                        src="../Task-1/images/maledoc.png"
+                        alt="Dr. Satish Koul"
+                    >
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Satish Koul
+                        </h3>
+
+                        <p class="qualification">
+                            MBBS, DM
+                        </p>
+
+                        <p class="specialization">
+                            Nephrology
+                        </p>
+
+                        <p class="experience">
+                            16+ Years Experience
+                        </p>
+
+                        <p class="fee">
+                            Consultation Fee: ₹850
+                        </p>
+
+                        <p class="availability">
+                            Available: Mon - Fri
+                        </p>
+
+                        <button
+                            class="doctor-btn"
+                            data-doctor="Dr. Satish Koul"
+                        >
+                            View Profile
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOCTOR 5 -->
+
+                <div
+                    class="doctor-card"
+                    data-name="Dr. Dinesh Rauthan"
+                    data-department="Pediatrics"
+                >
+
+                    <img
+                        src="../Task-1/images/maledoc.png"
+                        alt="Dr. Dinesh Rauthan"
+                    >
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Dinesh Rauthan
+                        </h3>
+
+                        <p class="qualification">
+                            MBBS, MD
+                        </p>
+
+                        <p class="specialization">
+                            Pediatrics
+                        </p>
+
+                        <p class="experience">
+                            13+ Years Experience
+                        </p>
+
+                        <p class="fee">
+                            Consultation Fee: ₹650
+                        </p>
+
+                        <p class="availability">
+                            Available: Mon - Sat
+                        </p>
+
+                        <button
+                            class="doctor-btn"
+                            data-doctor="Dr. Dinesh Rauthan"
+                        >
+                            View Profile
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOCTOR 6 -->
+
+                <div
+                    class="doctor-card"
+                    data-name="Dr. Kamna Bakshi"
+                    data-department="Gynecology"
+                >
+
+                    <img
+                        src="../Task-1/images/femaledoc.png"
+                        alt="Dr. Kamna Bakshi"
+                    >
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Kamna Bakshi
+                        </h3>
+
+                        <p class="qualification">
+                            MBBS, MS
+                        </p>
+
+                        <p class="specialization">
+                            Gynecology
+                        </p>
+
+                        <p class="experience">
+                            14+ Years Experience
+                        </p>
+
+                        <p class="fee">
+                            Consultation Fee: ₹750
+                        </p>
+
+                        <p class="availability">
+                            Available: Mon - Fri
+                        </p>
+
+                        <button
+                            class="doctor-btn"
+                            data-doctor="Dr. Kamna Bakshi"
+                        >
+                            View Profile
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <p
+                class="no-doctors"
+                id="noDoctors"
+            >
+                No doctors found matching your search.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             DOCTOR PROFILE
+        ========================== -->
+
+        <section
+            class="doctor-profile"
+            id="doctorProfile"
+        >
+
+            <h2>
+                Doctor Profile
+            </h2>
+
+            <div
+                class="profile-container"
+                id="profileContainer"
+            >
+
+                <div class="profile-placeholder">
+
+                    <h3>
+                        Select a Doctor
+                    </h3>
+
+                    <p>
+                        Click "View Profile" on any doctor to see
+                        their details and available appointment slots.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             APPOINTMENT BOOKING
+        ========================== -->
+
+        <section
+            class="booking"
+            id="booking"
+        >
+
+            <h2>
+                Book an Appointment
+            </h2>
+
+            <p class="section-subtitle">
+                Select your doctor, date, time, and enter your details.
+            </p>
+
+
+            <form
+                class="booking-form"
+                id="bookingForm"
+            >
+
+                <!-- Patient Name -->
+
+                <div class="form-group">
+
+                    <label for="patientName">
+                        Patient Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="patientName"
+                        name="patientName"
+                        placeholder="Enter patient name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="patientEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="patientEmail"
+                        name="patientEmail"
+                        placeholder="Enter email address"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="patientPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="patientPhone"
+                        name="patientPhone"
+                        placeholder="Enter 10-digit phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Doctor -->
+
+                <div class="form-group">
+
+                    <label for="doctorSelect">
+                        Select Doctor
+                    </label>
+
+                    <select
+                        id="doctorSelect"
+                        name="doctor"
+                        required
+                    >
+
+                        <option value="">
+                            Select a Doctor
+                        </option>
+
+                        <option value="Dr. Sunaina Sharma">
+                            Dr. Sunaina Sharma - Cardiology
+                        </option>
+
+                        <option value="Dr. Shiva Reddy">
+                            Dr. Shiva Reddy - Neurology
+                        </option>
+
+                        <option value="Dr. Komal Bhatia">
+                            Dr. Komal Bhatia - ENT
+                        </option>
+
+                        <option value="Dr. Satish Koul">
+                            Dr. Satish Koul - Nephrology
+                        </option>
+
+                        <option value="Dr. Dinesh Rauthan">
+                            Dr. Dinesh Rauthan - Pediatrics
+                        </option>
+
+                        <option value="Dr. Kamna Bakshi">
+                            Dr. Kamna Bakshi - Gynecology
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Date -->
+
+                <div class="form-group">
+
+                    <label for="appointmentDate">
+                        Select Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="appointmentDate"
+                        name="appointmentDate"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Time -->
+
+                <div class="form-group">
+
+                    <label>
+                        Select Time Slot
+                    </label>
+
+                    <div
+                        class="time-slots"
+                        id="timeSlots"
+                    >
+
+                        <button
+                            type="button"
+                            class="time-slot"
+                            data-time="10:00 AM"
+                        >
+                            10:00 AM
+                        </button>
+
+                        <button
+                            type="button"
+                            class="time-slot"
+                            data-time="11:00 AM"
+                        >
+                            11:00 AM
+                        </button>
+
+                        <button
+                            type="button"
+                            class="time-slot"
+                            data-time="12:00 PM"
+                        >
+                            12:00 PM
+                        </button>
+
+                        <button
+                            type="button"
+                            class="time-slot"
+                            data-time="02:00 PM"
+                        >
+                            02:00 PM
+                        </button>
+
+                        <button
+                            type="button"
+                            class="time-slot"
+                            data-time="03:00 PM"
+                        >
+                            03:00 PM
+                        </button>
+
+                        <button
+                            type="button"
+                            class="time-slot"
+                            data-time="05:00 PM"
+                        >
+                            05:00 PM
+                        </button>
+
+                    </div>
+
+                    <input
+                        type="hidden"
+                        id="selectedTime"
+                        name="selectedTime"
+                    >
+
+                </div>
+
+
+                <!-- Reason -->
+
+                <div class="form-group">
+
+                    <label for="appointmentMessage">
+                        Reason for Visit
+                    </label>
+
+                    <textarea
+                        id="appointmentMessage"
+                        name="message"
+                        rows="5"
+                        placeholder="Briefly describe your reason for the visit"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="booking-btn"
+                >
+                    Confirm Appointment
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             APPOINTMENT SUMMARY
+        ========================== -->
+
+        <section
+            class="appointment-summary"
+            id="appointmentSummary"
+        >
+
+            <h2>
+                Appointment Summary
+            </h2>
+
+            <div
+                class="summary-container"
+                id="summaryContainer"
+            >
+
+                <p>
+                    Your appointment details will appear here after booking.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             APPOINTMENT HISTORY
+        ========================== -->
+
+        <section
+            class="history"
+            id="history"
+        >
+
+            <h2>
+                My Appointments
+            </h2>
+
+            <p class="section-subtitle">
+                View your previously booked appointments.
+            </p>
+
+            <div
+                class="history-container"
+                id="historyContainer"
+            >
+
+                <p class="empty-history">
+                    No appointments booked yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-about">
+
+                <h3>
+                    HealSphere
+                </h3>
+
+                <p>
+                    HealSphere Multispeciality Clinic provides quality
+                    healthcare with experienced doctors, modern facilities,
+                    and compassionate patient care.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#doctors">
+                    Doctors
+                </a>
+
+                <a href="#booking">
+                    Book Appointment
+                </a>
+
+                <a href="#history">
+                    My Appointments
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>
+                    ☎ +91 129-4012345
+                </p>
+
+                <p>
+                    ✉ contact@healsphere.com
+                </p>
+
+                <p>
+                    📍 Sector 21D, Faridabad, Haryana
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 HealSphere Multispeciality Clinic.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
