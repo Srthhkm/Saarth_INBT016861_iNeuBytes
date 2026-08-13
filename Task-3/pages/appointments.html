@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealSphere - Appointment Management</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP NAVIGATION
+    ========================== -->
+
+    <header class="topbar">
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <div class="brand">
+            <img src="../images/logo.png" alt="HealSphere Logo">
+            <span>HealSphere</span>
+        </div>
+
+        <div class="admin-profile">
+
+            <span class="profile-avatar">
+                A
+            </span>
+
+            <div>
+                <strong>Admin</strong>
+                <small>Administrator</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="dashboard-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-title">
+                ADMIN PANEL
+            </div>
+
+            <nav>
+
+                <a href="../index.html">
+                    <span>▣</span>
+                    Dashboard
+                </a>
+
+                <a href="doctors.html">
+                    <span>⚕</span>
+                    Doctors
+                </a>
+
+                <a href="patients.html">
+                    <span>♙</span>
+                    Patients
+                </a>
+
+                <a href="appointments.html" class="active">
+                    <span>▤</span>
+                    Appointments
+                </a>
+
+                <a href="departments.html">
+                    <span>▦</span>
+                    Departments
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <section class="page-heading">
+
+                <div>
+
+                    <h1>Appointment Management</h1>
+
+                    <p>
+                        View, search and update patient appointments.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 SEARCH + FILTER
+            ========================== -->
+
+            <section class="management-card">
+
+                <div class="filter-row">
+
+                    <input
+                        type="text"
+                        id="appointmentSearch"
+                        placeholder="Search by patient or doctor..."
+                    >
+
+
+                    <select id="statusFilter">
+
+                        <option value="">
+                            All Status
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Confirmed">
+                            Confirmed
+                        </option>
+
+                        <option value="Completed">
+                            Completed
+                        </option>
+
+                        <option value="Cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 APPOINTMENT TABLE
+            ========================== -->
+
+            <section class="management-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Appointments</h2>
+
+                        <p>
+                            Manage appointment records and their status.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="appointmentTableBody">
+                            <!-- JavaScript -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p
+                    class="empty-message hidden"
+                    id="noAppointments"
+                >
+                    No appointments found.
+                </p>
+
+            </section>
+
+
+            <!-- =========================
+                 APPOINTMENT DETAILS
+            ========================== -->
+
+            <section
+                class="management-card hidden"
+                id="appointmentDetails"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Appointment Details</h2>
+
+                    </div>
+
+                    <button
+                        class="secondary-btn"
+                        id="closeAppointmentDetails"
+                    >
+                        Close
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="details-grid"
+                    id="appointmentDetailsContent"
+                >
+                    <!-- JavaScript -->
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/appointments.js"></script>
+
+</body>
+
+</html>

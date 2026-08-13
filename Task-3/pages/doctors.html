@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealSphere - Doctor Management</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP NAVIGATION
+    ========================== -->
+
+    <header class="topbar">
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <div class="brand">
+            <img src="../images/logo.png" alt="HealSphere Logo">
+            <span>HealSphere</span>
+        </div>
+
+        <div class="admin-profile">
+
+            <span class="profile-avatar">
+                A
+            </span>
+
+            <div>
+                <strong>Admin</strong>
+                <small>Administrator</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="dashboard-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-title">
+                ADMIN PANEL
+            </div>
+
+            <nav>
+
+                <a href="../index.html">
+                    <span>▣</span>
+                    Dashboard
+                </a>
+
+                <a href="doctors.html" class="active">
+                    <span>⚕</span>
+                    Doctors
+                </a>
+
+                <a href="patients.html">
+                    <span>♙</span>
+                    Patients
+                </a>
+
+                <a href="appointments.html">
+                    <span>▤</span>
+                    Appointments
+                </a>
+
+                <a href="departments.html">
+                    <span>▦</span>
+                    Departments
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <section class="page-heading">
+
+                <div>
+                    <h1>Doctor Management</h1>
+
+                    <p>
+                        Manage doctors and their professional information.
+                    </p>
+                </div>
+
+                <button class="primary-btn" id="showDoctorForm">
+                    + Add Doctor
+                </button>
+
+            </section>
+
+
+            <!-- =========================
+                 SEARCH
+            ========================== -->
+
+            <section class="management-card">
+
+                <div class="search-row">
+
+                    <input
+                        type="text"
+                        id="doctorSearch"
+                        placeholder="Search doctor by name or department..."
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 DOCTOR FORM
+            ========================== -->
+
+            <section
+                class="management-card form-card hidden"
+                id="doctorFormContainer"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2 id="doctorFormTitle">
+                            Add Doctor
+                        </h2>
+
+                        <p>
+                            Enter professional details of the doctor.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="doctorForm">
+
+                    <input
+                        type="hidden"
+                        id="doctorId"
+                    >
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="doctorName">
+                                Doctor Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="doctorName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctorDepartment">
+                                Department
+                            </label>
+
+                            <select
+                                id="doctorDepartment"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Department
+                                </option>
+
+                                <option value="Cardiology">
+                                    Cardiology
+                                </option>
+
+                                <option value="Neurology">
+                                    Neurology
+                                </option>
+
+                                <option value="ENT">
+                                    ENT
+                                </option>
+
+                                <option value="Nephrology">
+                                    Nephrology
+                                </option>
+
+                                <option value="Pediatrics">
+                                    Pediatrics
+                                </option>
+
+                                <option value="Gynecology">
+                                    Gynecology
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctorQualification">
+                                Qualification
+                            </label>
+
+                            <input
+                                type="text"
+                                id="doctorQualification"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctorExperience">
+                                Experience
+                            </label>
+
+                            <input
+                                type="text"
+                                id="doctorExperience"
+                                placeholder="Example: 15+ Years"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctorFee">
+                                Consultation Fee
+                            </label>
+
+                            <input
+                                type="number"
+                                id="doctorFee"
+                                min="0"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctorAvailability">
+                                Availability
+                            </label>
+
+                            <input
+                                type="text"
+                                id="doctorAvailability"
+                                placeholder="Example: Mon - Fri"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            Save Doctor
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="cancelDoctorForm"
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =========================
+                 DOCTOR TABLE
+            ========================== -->
+
+            <section class="management-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Doctors</h2>
+
+                        <p>
+                            View and manage registered doctors.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Qualification</th>
+                                <th>Experience</th>
+                                <th>Fee</th>
+                                <th>Availability</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="doctorTableBody">
+                            <!-- JavaScript -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p
+                    class="empty-message hidden"
+                    id="noDoctors"
+                >
+                    No doctors found.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/doctors.js"></script>
+
+</body>
+
+</html>

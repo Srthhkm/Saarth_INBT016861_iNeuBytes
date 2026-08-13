@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealSphere - Department Management</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP NAVIGATION
+    ========================== -->
+
+    <header class="topbar">
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <div class="brand">
+            <img src="../images/logo.png" alt="HealSphere Logo">
+            <span>HealSphere</span>
+        </div>
+
+        <div class="admin-profile">
+
+            <span class="profile-avatar">
+                A
+            </span>
+
+            <div>
+                <strong>Admin</strong>
+                <small>Administrator</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="dashboard-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-title">
+                ADMIN PANEL
+            </div>
+
+            <nav>
+
+                <a href="../index.html">
+                    <span>▣</span>
+                    Dashboard
+                </a>
+
+                <a href="doctors.html">
+                    <span>⚕</span>
+                    Doctors
+                </a>
+
+                <a href="patients.html">
+                    <span>♙</span>
+                    Patients
+                </a>
+
+                <a href="appointments.html">
+                    <span>▤</span>
+                    Appointments
+                </a>
+
+                <a href="departments.html" class="active">
+                    <span>▦</span>
+                    Departments
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <section class="page-heading">
+
+                <div>
+
+                    <h1>Department Management</h1>
+
+                    <p>
+                        Manage healthcare departments and their information.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="showDepartmentForm"
+                >
+                    + Add Department
+                </button>
+
+            </section>
+
+
+            <!-- =========================
+                 SEARCH
+            ========================== -->
+
+            <section class="management-card">
+
+                <div class="search-row">
+
+                    <input
+                        type="text"
+                        id="departmentSearch"
+                        placeholder="Search department..."
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 DEPARTMENT FORM
+            ========================== -->
+
+            <section
+                class="management-card form-card hidden"
+                id="departmentFormContainer"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2 id="departmentFormTitle">
+                            Add Department
+                        </h2>
+
+                        <p>
+                            Enter department information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="departmentForm">
+
+                    <input
+                        type="hidden"
+                        id="departmentId"
+                    >
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="departmentName">
+                                Department Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="departmentName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="departmentDescription">
+                                Description
+                            </label>
+
+                            <input
+                                type="text"
+                                id="departmentDescription"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="departmentHead">
+                                Department Head
+                            </label>
+
+                            <input
+                                type="text"
+                                id="departmentHead"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            Save Department
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="cancelDepartmentForm"
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =========================
+                 DEPARTMENT TABLE
+            ========================== -->
+
+            <section class="management-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Departments</h2>
+
+                        <p>
+                            View and manage healthcare departments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Department</th>
+                                <th>Description</th>
+                                <th>Department Head</th>
+                                <th>Doctors</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="departmentTableBody">
+                            <!-- JavaScript -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p
+                    class="empty-message hidden"
+                    id="noDepartments"
+                >
+                    No departments found.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+    <script src="../js/departments.js"></script>
+
+</body>
+
+</html>
