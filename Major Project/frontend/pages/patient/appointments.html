@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Appointments | HealSphere</title>
+
+    <meta
+        name="description"
+        content="View and manage your HealSphere appointments."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+    rel="stylesheet"
+    href="../../css/dashboard.css"
+    >
+    
+    <link
+        rel="stylesheet"
+        href="../../css/patient.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <nav class="dashboard-navbar">
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+
+                <div class="dashboard-nav-links">
+
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+
+                    <a href="book-appointment.html">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        Book Appointment
+                    </a>
+
+                    <a
+                        href="appointments.html"
+                        class="active"
+                    >
+                        <i class="fa-solid fa-calendar-check"></i>
+                        My Appointments
+                    </a>
+
+                    <a href="medical-records.html">
+                        <i class="fa-solid fa-file-medical"></i>
+                        Medical Records
+                    </a>
+
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+
+                </div>
+
+
+                <div class="dashboard-user">
+
+                    <a
+                        href="profile.html"
+                        class="user-profile"
+                    >
+
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <span>
+                            Patient
+                        </span>
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                        aria-label="Logout"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+        <div class="container">
+
+            <section class="dashboard-page-heading">
+
+                <span class="section-subtitle">
+                    Appointment Center
+                </span>
+
+                <h1>
+                    My Appointments
+                </h1>
+
+                <p>
+                    View your upcoming and previous healthcare
+                    appointments.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 FILTERS
+                 ================================================= -->
+
+            <section class="patient-card">
+
+                <div class="appointment-toolbar">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="appointmentSearch"
+                            placeholder="Search appointments..."
+                        >
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="statusFilter">
+                            Status
+                        </label>
+
+                        <select
+                            id="statusFilter"
+                            class="form-control"
+                        >
+
+                            <option value="all">
+                                All
+                            </option>
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+                            <option value="Confirmed">
+                                Confirmed
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                            <option value="Cancelled">
+                                Cancelled
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <a
+                        href="book-appointment.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        New Appointment
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 UPCOMING
+                 ================================================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header-inline">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Scheduled
+                        </span>
+
+                        <h2>
+                            Upcoming Appointments
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="upcomingAppointments"
+                    class="appointments-list"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-state-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+
+                        <h3>
+                            No upcoming appointments
+                        </h3>
+
+                        <p>
+                            Your upcoming appointments will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 HISTORY
+                 ================================================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header-inline">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            History
+                        </span>
+
+                        <h2>
+                            Previous Appointments
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="appointmentHistory"
+                    class="appointments-list"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-state-icon">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+
+                        <h3>
+                            No appointment history
+                        </h3>
+
+                        <p>
+                            Your completed and cancelled appointments
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 HealSphere. All rights reserved.
+            </p>
+
+            <a href="../../pages/contact.html">
+                Need Help?
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/utils.js"></script>
+
+    <script src="../../js/patient/appointments.js"></script>
+
+</body>
+
+</html>

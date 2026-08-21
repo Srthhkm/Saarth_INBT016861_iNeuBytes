@@ -1,0 +1,793 @@
+<!-- DOCTOR - PROFILE -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Doctor Profile | HealSphere</title>
+
+    <meta
+        name="description"
+        content="Manage your professional HealSphere doctor profile."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/doctor.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <nav class="dashboard-navbar">
+
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+
+
+                <div class="dashboard-nav-links">
+
+
+                    <a href="dashboard.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Dashboard
+
+                    </a>
+
+
+
+                    <a href="appointments.html">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        Appointments
+
+                    </a>
+
+
+
+                    <a href="patients.html">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        Patients
+
+                    </a>
+
+
+
+                    <a
+                        href="profile.html"
+                        class="active"
+                    >
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Profile
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="dashboard-user">
+
+
+                    <a
+                        href="profile.html"
+                        class="user-profile"
+                    >
+
+                        <div class="user-avatar">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                        </div>
+
+
+                        <span id="doctorNavName">
+                            Doctor
+                        </span>
+
+                    </a>
+
+
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                        aria-label="Logout"
+                    >
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+        <div class="container">
+
+
+            <section class="dashboard-page-heading">
+
+                <span class="section-subtitle">
+                    Account & Professional Information
+                </span>
+
+
+                <h1>
+                    My Profile
+                </h1>
+
+
+                <p>
+                    Manage your professional and contact information.
+                </p>
+
+            </section>
+
+
+
+            <div class="doctor-profile-layout">
+
+
+                <!-- =================================================
+                     PROFILE SUMMARY
+                     ================================================= -->
+
+                <aside class="patient-card doctor-profile-sidebar">
+
+
+                    <div class="doctor-avatar-large">
+
+                        <i class="fa-solid fa-user-doctor"></i>
+
+                    </div>
+
+
+
+                    <h2 id="doctorDisplayName">
+                        Doctor
+                    </h2>
+
+
+
+                    <span
+                        class="doctor-speciality"
+                        id="doctorDisplaySpeciality"
+                    >
+                        Department
+                    </span>
+
+
+
+                    <p
+                        class="doctor-qualification"
+                        id="doctorDisplayQualification"
+                    >
+                        Qualification
+                    </p>
+
+
+
+                    <div class="profile-sidebar-divider"></div>
+
+
+
+                    <div class="profile-sidebar-item">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+
+                        <span id="doctorDisplayEmail">
+                            Email
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="profile-sidebar-item">
+
+                        <i class="fa-solid fa-phone"></i>
+
+
+                        <span id="doctorDisplayPhone">
+                            Phone
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="profile-sidebar-item">
+
+                        <i class="fa-solid fa-hospital"></i>
+
+
+                        <span id="doctorDisplayDepartment">
+                            Department
+                        </span>
+
+                    </div>
+
+                </aside>
+
+
+
+                <!-- =================================================
+                     PROFILE FORM
+                     ================================================= -->
+
+                <section class="patient-card profile-form-card">
+
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="section-subtitle">
+                                Professional Information
+                            </span>
+
+
+                            <h2>
+                                Profile Details
+                            </h2>
+
+                        </div>
+
+
+                        <div class="card-header-icon">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <form
+                        id="doctorProfileForm"
+                        class="patient-form"
+                    >
+
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+                                <label for="doctorName">
+                                    Full Name
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="doctorName"
+                                    name="name"
+                                    class="form-control"
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="doctorEmail">
+                                    Email Address
+                                </label>
+
+
+                                <input
+                                    type="email"
+                                    id="doctorEmail"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+                                <label for="doctorPhone">
+                                    Phone Number
+                                </label>
+
+
+                                <input
+                                    type="tel"
+                                    id="doctorPhone"
+                                    name="phone"
+                                    class="form-control"
+                                    placeholder="Enter phone number"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="doctorQualification">
+                                    Qualification
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="doctorQualification"
+                                    name="qualification"
+                                    class="form-control"
+                                    placeholder="Enter qualification"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+                                <label for="doctorDepartment">
+                                    Department
+                                </label>
+
+
+                                <select
+                                    id="doctorDepartment"
+                                    name="department"
+                                    class="form-control"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+
+                                    <option value="Cardiology">
+                                        Cardiology
+                                    </option>
+
+
+                                    <option value="Neurology">
+                                        Neurology
+                                    </option>
+
+
+                                    <option value="ENT">
+                                        ENT
+                                    </option>
+
+
+                                    <option value="Nephrology">
+                                        Nephrology
+                                    </option>
+
+
+                                    <option value="Pediatrics">
+                                        Pediatrics
+                                    </option>
+
+
+                                    <option value="Gynecology">
+                                        Gynecology
+                                    </option>
+
+
+                                    <option value="Orthopedics">
+                                        Orthopedics
+                                    </option>
+
+
+                                    <option value="Oncology">
+                                        Oncology
+                                    </option>
+
+
+                                    <option value="Ophthalmology">
+                                        Ophthalmology
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="doctorExperience">
+                                    Experience
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="doctorExperience"
+                                    name="experience"
+                                    class="form-control"
+                                    placeholder="e.g. 5+ Years"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-section-title">
+
+                            <i class="fa-solid fa-clock"></i>
+
+
+                            <span>
+                                Availability
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+                                <label for="doctorAvailability">
+                                    Working Days
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="doctorAvailability"
+                                    name="availability"
+                                    class="form-control"
+                                    placeholder="e.g. Monday - Friday"
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="doctorHours">
+                                    Consultation Hours
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="doctorHours"
+                                    name="hours"
+                                    class="form-control"
+                                    placeholder="e.g. 09:00 AM - 05:00 PM"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="doctorBio">
+                                Professional Bio
+                            </label>
+
+
+                            <textarea
+                                id="doctorBio"
+                                name="bio"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Write a short professional biography..."
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <div class="form-actions">
+
+
+                            <button
+                                type="reset"
+                                class="btn btn-outline"
+                            >
+
+                                Cancel
+
+                            </button>
+
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+
+                                <i class="fa-solid fa-floppy-disk"></i>
+
+                                Save Changes
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ACCOUNT SECURITY
+                 ================================================= -->
+
+            <section class="patient-card security-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Security
+                        </span>
+
+
+                        <h2>
+                            Account Security
+                        </h2>
+
+                    </div>
+
+
+                    <div class="card-header-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="security-row">
+
+                    <div>
+
+                        <h3>
+                            Password
+                        </h3>
+
+
+                        <p>
+                            Update your password regularly to keep
+                            your account secure.
+                        </p>
+
+                    </div>
+
+
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="changePasswordBtn"
+                    >
+
+                        <i class="fa-solid fa-key"></i>
+
+                        Change Password
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 HealSphere. All rights reserved.
+            </p>
+
+
+            <a href="../../pages/contact.html">
+                Need Help?
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="../../js/api.js"></script>
+
+    <script src="../../js/auth.js"></script>
+
+    <script src="../../js/main.js"></script>
+
+    <script src="../../js/utils.js"></script>
+
+    <script src="../../js/doctor/profile.js"></script>
+
+
+
+   <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const user =
+                    typeof HealSphereUtils !== "undefined"
+                        ? HealSphereUtils.getCurrentUser()
+                        : null;
+
+
+                if (!user?.name) {
+                    return;
+                }
+
+
+                const doctorName =
+                    user.name.trim();
+
+
+                const displayName =
+                    doctorName
+                        .toLowerCase()
+                        .startsWith("dr.")
+                        ? doctorName
+                        : `Dr. ${doctorName}`;
+
+
+                const navName =
+                    document.getElementById(
+                        "doctorNavName"
+                    );
+
+
+                const profileName =
+                    document.getElementById(
+                        "doctorDisplayName"
+                    );
+
+
+                const nameInput =
+                    document.getElementById(
+                        "doctorName"
+                    );
+
+
+                if (navName) {
+
+                    navName.textContent =
+                        displayName;
+
+                }
+
+
+                if (profileName) {
+
+                    profileName.textContent =
+                        displayName;
+
+                }
+
+
+                if (nameInput) {
+
+                    nameInput.value =
+                        doctorName;
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Medical Records | HealSphere</title>
+
+    <meta
+        name="description"
+        content="View your medical records and consultation history through HealSphere."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+    rel="stylesheet"
+    href="../../css/dashboard.css"
+    >
+    
+    <link
+        rel="stylesheet"
+        href="../../css/patient.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <nav class="dashboard-navbar">
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+
+                <div class="dashboard-nav-links">
+
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+
+                    <a href="book-appointment.html">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        Book Appointment
+                    </a>
+
+                    <a href="appointments.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        My Appointments
+                    </a>
+
+                    <a
+                        href="medical-records.html"
+                        class="active"
+                    >
+                        <i class="fa-solid fa-file-medical"></i>
+                        Medical Records
+                    </a>
+
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+
+                </div>
+
+
+                <div class="dashboard-user">
+
+                    <a
+                        href="profile.html"
+                        class="user-profile"
+                    >
+
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <span>
+                            Patient
+                        </span>
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                        aria-label="Logout"
+                    >
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+        <div class="container">
+
+            <section class="dashboard-page-heading">
+
+                <span class="section-subtitle">
+                    Health Information
+                </span>
+
+                <h1>
+                    Medical Records
+                </h1>
+
+                <p>
+                    View your consultation history, diagnoses,
+                    prescriptions and other healthcare records.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 RECORD SUMMARY
+                 ================================================= -->
+
+            <section class="dashboard-stats">
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-file-medical"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Records
+                        </span>
+
+                        <strong id="totalRecords">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Consultations
+                        </span>
+
+                        <strong id="consultationCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-prescription-bottle-medical"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Prescriptions
+                        </span>
+
+                        <strong id="prescriptionCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Last Visit
+                        </span>
+
+                        <strong id="lastVisit">
+                            —
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 RECORD SEARCH
+                 ================================================= -->
+
+            <section class="patient-card">
+
+                <div class="appointment-toolbar">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="recordSearch"
+                            placeholder="Search medical records..."
+                        >
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="recordType">
+                            Record Type
+                        </label>
+
+                        <select
+                            id="recordType"
+                            class="form-control"
+                        >
+
+                            <option value="all">
+                                All Records
+                            </option>
+
+                            <option value="consultation">
+                                Consultation
+                            </option>
+
+                            <option value="prescription">
+                                Prescription
+                            </option>
+
+                            <option value="diagnostic">
+                                Diagnostic Report
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 UPLOAD MEDICAL DOCUMENT
+                 ================================================= -->
+
+            <section class="patient-card medical-document-upload">
+
+                <div class="section-header-inline">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Personal Health Files
+                        </span>
+
+                        <h2>
+                            Store a Medical Document
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <form id="medicalDocumentForm" class="document-upload-form">
+
+                    <div class="form-group">
+
+                        <label for="documentTitle">
+                            Document title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="documentTitle"
+                            class="form-control"
+                            maxlength="120"
+                            placeholder="e.g. Blood test - August 2026"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="documentCategory">
+                            Category
+                        </label>
+
+                        <select id="documentCategory" class="form-control">
+                            <option value="Prescription">Prescription</option>
+                            <option value="Lab Report">Lab Report</option>
+                            <option value="Scan / Imaging">Scan / Imaging</option>
+                            <option value="Insurance">Insurance</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group document-file-field">
+
+                        <label for="medicalDocument">
+                            File
+                        </label>
+
+                        <input
+                            type="file"
+                            id="medicalDocument"
+                            class="form-control"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            required
+                        >
+
+                        <small>
+                            PDF, JPG or PNG up to 5 MB.
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="uploadDocumentBtn"
+                    >
+                        <i class="fa-solid fa-upload"></i>
+                        Upload Document
+                    </button>
+
+                </form>
+
+                <p class="form-message" id="documentFormMessage" role="status"></p>
+
+            </section>
+
+
+            <!-- =================================================
+                 MEDICAL RECORDS
+                 ================================================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header-inline">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Health History
+                        </span>
+
+                        <h2>
+                            Your Records
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="medical-records-list"
+                    id="medicalRecordsList"
+                >
+
+
+                    <!-- Record 1 -->
+
+                    <article
+                        class="medical-record-card"
+                        data-type="consultation"
+                    >
+
+                        <div class="medical-record-icon">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+
+
+                        <div class="medical-record-content">
+
+                            <div class="medical-record-header">
+
+                                <div>
+
+                                    <span class="record-type">
+                                        Consultation
+                                    </span>
+
+                                    <h3>
+                                        Doctor Consultation
+                                    </h3>
+
+                                </div>
+
+                                <span class="record-date">
+                                    —
+                                </span>
+
+                            </div>
+
+
+                            <p>
+                                Your consultation details will appear
+                                here after your doctor completes a visit.
+                            </p>
+
+
+                            <div class="medical-record-meta">
+
+                                <span>
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                    Doctor: —
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-hospital"></i>
+                                    Department: —
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-outline btn-sm record-view-btn"
+                                disabled
+                            >
+                                View Record
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Empty state -->
+
+                    <div
+                        class="empty-state"
+                        id="noMedicalRecords"
+                        style="display: none;"
+                    >
+
+                        <div class="empty-state-icon">
+
+                            <i class="fa-solid fa-file-medical"></i>
+
+                        </div>
+
+                        <h3>
+                            No medical records found
+                        </h3>
+
+                        <p>
+                            Your medical records will appear here
+                            after your consultations.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STORED DOCUMENTS
+                 ================================================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header-inline">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Uploaded Files
+                        </span>
+
+                        <h2>
+                            Your Stored Documents
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="medical-documents-list" id="medicalDocumentsList">
+
+                    <div class="empty-state">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <h3>No stored documents</h3>
+                        <p>Upload a prescription, report or other health file above.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 INFORMATION BANNER
+                 ================================================= -->
+
+            <section class="dashboard-banner">
+
+                <div class="dashboard-banner-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Your medical information is private
+                    </h3>
+
+                    <p>
+                        HealSphere is designed to keep your healthcare
+                        information secure and accessible to you.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 HealSphere. All rights reserved.
+            </p>
+
+            <a href="../../pages/contact.html">
+                Need Help?
+            </a>
+
+        </div>
+
+    </footer>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/utils.js"></script>
+    <script src="../../js/patient/medical-records.js"></script>
+
+</body>
+
+</html>

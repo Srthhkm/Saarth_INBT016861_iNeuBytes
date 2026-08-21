@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Patient Dashboard | HealSphere</title>
+
+    <meta
+        name="description"
+        content="HealSphere patient dashboard."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+    
+    <link
+    rel="stylesheet"
+    href="../../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/patient.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- =====================================================
+         PATIENT NAVIGATION
+         ===================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <nav class="dashboard-navbar">
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+
+                <div class="dashboard-nav-links">
+
+                    <a
+                        href="dashboard.html"
+                        class="active"
+                    >
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+
+                    <a href="book-appointment.html">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        Book Appointment
+                    </a>
+
+                    <a href="appointments.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        My Appointments
+                    </a>
+
+                    <a href="medical-records.html">
+                        <i class="fa-solid fa-file-medical"></i>
+                        Medical Records
+                    </a>
+
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+
+                </div>
+
+
+                <div class="dashboard-user">
+
+                    <a
+                        href="profile.html"
+                        class="user-profile"
+                    >
+
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <span>
+                            Patient
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                        aria-label="Logout"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         DASHBOARD CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+        <div class="container">
+
+            <section class="dashboard-welcome">
+
+                <div>
+
+                    <span class="dashboard-subtitle">
+                        Patient Portal
+                    </span>
+
+                    <h1>
+                        Welcome back,
+                        <span id="patientName">
+                            Patient
+                        </span>
+                    </h1>
+
+                    <p>
+                        Manage your appointments and healthcare
+                        information from one place.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="book-appointment.html"
+                    class="btn btn-primary"
+                >
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    Book Appointment
+                </a>
+
+            </section>
+
+
+            <!-- =================================================
+                 STATISTICS
+                 ================================================= -->
+
+            <section class="dashboard-stats">
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Upcoming Appointments
+                        </span>
+
+                        <strong id="upcomingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending Appointments
+                        </span>
+
+                        <strong id="pendingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-check-circle"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Completed Visits
+                        </span>
+
+                        <strong id="completedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-file-medical"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Medical Records
+                        </span>
+
+                        <strong id="recordsCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUICK ACTIONS
+                 ================================================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header-inline">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Quick Access
+                        </span>
+
+                        <h2>
+                            What would you like to do?
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions-grid">
+
+                    <a
+                        href="book-appointment.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            <i class="fa-solid fa-calendar-plus"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Book Appointment
+                            </h3>
+
+                            <p>
+                                Schedule a consultation with one of
+                                our healthcare professionals.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="appointments.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                My Appointments
+                            </h3>
+
+                            <p>
+                                View upcoming and previous appointments.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="medical-records.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Medical Records
+                            </h3>
+
+                            <p>
+                                View your consultation and medical records.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="profile.html"
+                        class="quick-action-card"
+                    >
+
+                        <div class="quick-action-icon">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                My Profile
+                            </h3>
+
+                            <p>
+                                View and update your personal information.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 UPCOMING APPOINTMENTS
+                 ================================================= -->
+
+            <section class="dashboard-section">
+
+                <div class="section-header-inline">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Your Schedule
+                        </span>
+
+                        <h2>
+                            Upcoming Appointments
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="appointments.html"
+                        class="text-link"
+                    >
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="appointment-preview"
+                    id="upcomingAppointments"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-state-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+
+                        <h3>
+                            No upcoming appointments
+                        </h3>
+
+                        <p>
+                            You don't have any upcoming appointments.
+                        </p>
+
+                        <a
+                            href="book-appointment.html"
+                            class="btn btn-primary btn-sm"
+                        >
+                            Book Appointment
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 HEALTHCARE REMINDER
+                 ================================================= -->
+
+            <section class="dashboard-banner">
+
+                <div class="dashboard-banner-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Stay on top of your health
+                    </h3>
+
+                    <p>
+                        Regular check-ups and timely consultations
+                        can help you maintain a healthier lifestyle.
+                    </p>
+
+                </div>
+
+                <a
+                    href="medical-records.html"
+                    class="btn btn-light btn-sm"
+                >
+                    View Records
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 HealSphere. All rights reserved.
+            </p>
+
+            <a href="../../pages/contact.html">
+                Need Help?
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/notifications.js"></script>
+    <script src="../../js/utils.js"></script>
+    
+    <script src="../../js/patient/dashboard.js"></script>
+
+</body>
+
+</html>

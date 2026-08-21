@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Doctor Management | HealSphere</title>
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <div class="dashboard-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+            <div class="sidebar-header">
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <div class="sidebar-section-title">
+                    Main
+                </div>
+
+
+                <a
+                    href="dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Management
+                </div>
+
+
+                <a
+                    href="doctors.html"
+                    class="sidebar-link active"
+                >
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    <span>
+                        Doctors
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="patients.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Patients
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="appointments.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>
+                        Appointments
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="departments.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <span>
+                        Departments
+                    </span>
+
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Insights
+                </div>
+
+
+                <a
+                    href="reports.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Account
+                </div>
+
+
+                <a
+                    href="profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>
+                        Profile
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- MAIN -->
+
+        <main class="dashboard-main">
+
+
+            <header class="dashboard-topbar">
+
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggle"
+                    >
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <h1>
+                            Doctor Management
+                        </h1>
+
+                        <p>
+                            Add, update and manage HealSphere doctors.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <a
+                        href="profile.html"
+                        class="user-menu"
+                    >
+
+                        <div class="user-avatar">
+                            A
+                        </div>
+
+
+                        <div class="user-info">
+
+                            <strong>
+                                Admin
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+            </header>
+
+
+
+            <div class="dashboard-content">
+
+
+                <!-- SEARCH + ADD -->
+
+                <section class="dashboard-section">
+
+
+                    <div class="toolbar">
+
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="doctorSearch"
+                                placeholder="Search doctor by name or department..."
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="showDoctorForm"
+                        >
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Add Doctor
+
+                        </button>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- FORM -->
+
+                <section
+                    class="dashboard-section hidden"
+                    id="doctorFormContainer"
+                >
+
+
+                    <div class="dashboard-card">
+
+
+                        <div class="card-header">
+
+
+                            <h3 id="doctorFormTitle">
+                                Add Doctor
+                            </h3>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-outline"
+                                id="cancelDoctorForm"
+                            >
+                                Cancel
+                            </button>
+
+
+                        </div>
+
+
+
+                        <div class="card-body">
+
+
+                            <form id="doctorForm">
+
+
+                                <input
+                                    type="hidden"
+                                    id="doctorId"
+                                >
+
+
+                                <!-- Doctor Name -->
+
+                                <div class="form-group">
+
+                                    <label for="doctorName">
+                                        Doctor Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="doctorName"
+                                        class="form-control"
+                                        placeholder="Dr. Full Name"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                <!-- Email -->
+
+                                <div class="form-group">
+
+                                    <label for="doctorEmail">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="doctorEmail"
+                                        class="form-control"
+                                        placeholder="doctor@example.com"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                <!-- Password -->
+
+                                <div
+                                    class="form-group"
+                                    id="doctorPasswordGroup"
+                                >
+
+                                    <label for="doctorPassword">
+                                        Password
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        id="doctorPassword"
+                                        class="form-control"
+                                        placeholder="Minimum 6 characters"
+                                        minlength="6"
+                                    >
+
+                                    <small>
+                                        Required when creating a new doctor account.
+                                    </small>
+
+                                </div>
+
+
+
+                                <!-- Phone -->
+
+                                <div class="form-group">
+
+                                    <label for="doctorPhone">
+                                        Phone
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="doctorPhone"
+                                        class="form-control"
+                                        placeholder="Phone number"
+                                    >
+
+                                </div>
+
+
+
+                                <!-- Department -->
+
+                                <div class="form-group">
+
+                                    <label for="doctorDepartment">
+                                        Department
+                                    </label>
+
+                                    <select
+                                        id="doctorDepartment"
+                                        class="form-control"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Select Department
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+
+                                <!-- Qualification -->
+
+                                <div class="form-group">
+
+                                    <label for="doctorQualification">
+                                        Qualification
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="doctorQualification"
+                                        class="form-control"
+                                        placeholder="MBBS, MD"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                <!-- Experience -->
+
+                                <div class="form-group">
+
+                                    <label for="doctorExperience">
+                                        Experience
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="doctorExperience"
+                                        class="form-control"
+                                        placeholder="10"
+                                        min="0"
+                                        step="1"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                <!-- Consultation Fee -->
+
+                                <div class="form-group">
+
+                                    <label for="doctorFee">
+                                        Consultation Fee
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="doctorFee"
+                                        class="form-control"
+                                        placeholder="800"
+                                        min="0"
+                                        step="1"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                <!-- Availability -->
+
+                                <div class="form-group">
+
+                                    <label for="doctorAvailability">
+                                        Availability
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="doctorAvailability"
+                                        class="form-control"
+                                        placeholder="Mon - Fri"
+                                        required
+                                    >
+
+                                </div>
+
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                >
+                                    Save Doctor
+                                </button>
+
+
+                            </form>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- TABLE -->
+
+                <section class="dashboard-section">
+
+
+                    <div class="dashboard-card">
+
+
+                        <div class="card-header">
+
+                            <h3>
+                                Doctors
+                            </h3>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+
+                            <table class="data-table">
+
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Department
+                                        </th>
+
+                                        <th>
+                                            Qualification
+                                        </th>
+
+                                        <th>
+                                            Experience
+                                        </th>
+
+                                        <th>
+                                            Fee
+                                        </th>
+
+                                        <th>
+                                            Availability
+                                        </th>
+
+                                        <th>
+                                            Actions
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="doctorTableBody">
+                                </tbody>
+
+
+                            </table>
+
+
+                        </div>
+
+
+                        <div
+                            class="empty-state hidden"
+                            id="noDoctors"
+                        >
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                            <h3>
+                                No doctors found
+                            </h3>
+
+                            <p>
+                                Try another search or add a new doctor.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <script src="../../js/api.js"></script>
+
+    <script src="../../js/auth.js"></script>
+
+    <script src="../../js/main.js"></script>
+
+    <script src="../../js/utils.js"></script>
+
+    <script src="../../js/admin/doctors.js"></script>
+
+
+</body>
+
+</html>

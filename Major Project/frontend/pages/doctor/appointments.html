@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Appointments | HealSphere</title>
+
+    <meta
+        name="description"
+        content="Manage doctor appointments and consultations through HealSphere."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/doctor.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <nav class="dashboard-navbar">
+
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+
+
+                <div class="dashboard-nav-links">
+
+
+                    <a href="dashboard.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Dashboard
+
+                    </a>
+
+
+
+                    <a
+                        href="appointments.html"
+                        class="active"
+                    >
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        Appointments
+
+                    </a>
+
+
+
+                    <a href="patients.html">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        Patients
+
+                    </a>
+
+
+
+                    <a href="profile.html">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Profile
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="dashboard-user">
+
+
+                    <a
+                        href="profile.html"
+                        class="user-profile"
+                    >
+
+                        <div class="user-avatar">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                        </div>
+
+
+                        <span id="doctorNavName">
+                            Doctor
+                        </span>
+
+                    </a>
+
+
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                        aria-label="Logout"
+                    >
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+        <div class="container">
+
+
+            <section class="dashboard-page-heading">
+
+                <span class="section-subtitle">
+                    Doctor Portal
+                </span>
+
+
+                <h1>
+                    Appointments
+                </h1>
+
+
+                <p>
+                    View scheduled appointments and manage
+                    consultation status.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FILTERS
+                 ================================================= -->
+
+            <section class="patient-card">
+
+                <div class="appointment-toolbar">
+
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                        <input
+                            type="search"
+                            id="appointmentSearch"
+                            placeholder="Search by patient name..."
+                        >
+
+                    </div>
+
+
+
+                    <div class="filter-group">
+
+                        <label for="appointmentStatus">
+                            Status
+                        </label>
+
+
+                        <select
+                            id="appointmentStatus"
+                            class="form-control"
+                        >
+
+                            <option value="all">
+                                All
+                            </option>
+
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+
+                            <option value="Confirmed">
+                                Confirmed
+                            </option>
+
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+
+                            <option value="Cancelled">
+                                Cancelled
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="filter-group">
+
+                        <label for="appointmentDateFilter">
+                            Date
+                        </label>
+
+
+                        <input
+                            type="date"
+                            id="appointmentDateFilter"
+                            class="form-control"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 APPOINTMENT LIST
+                 ================================================= -->
+
+            <section class="dashboard-section">
+
+
+                <div class="section-header-inline">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Schedule
+                        </span>
+
+
+                        <h2>
+                            Patient Appointments
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    class="doctor-appointments-list"
+                    id="doctorAppointmentsList"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-state-icon">
+
+                            <i class="fa-regular fa-calendar-check"></i>
+
+                        </div>
+
+
+                        <h3>
+                            No appointments found
+                        </h3>
+
+
+                        <p>
+                            Appointments assigned to you will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CONSULTATION PANEL
+                 ================================================= -->
+
+            <section
+                class="patient-card consultation-panel"
+                id="consultationPanel"
+                style="display: none;"
+            >
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Consultation
+                        </span>
+
+
+                        <h2>
+                            Patient Consultation
+                        </h2>
+
+
+                        <p>
+                            Record information from the patient's visit.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card-header-icon">
+
+                        <i class="fa-solid fa-notes-medical"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <form
+                    id="consultationForm"
+                    class="patient-form"
+                >
+
+
+                    <div class="form-group">
+
+                        <label for="consultationDiagnosis">
+                            Diagnosis
+                        </label>
+
+
+                        <textarea
+                            id="consultationDiagnosis"
+                            name="diagnosis"
+                            class="form-control"
+                            rows="4"
+                            placeholder="Enter diagnosis..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="consultationNotes">
+                            Consultation Notes
+                        </label>
+
+
+                        <textarea
+                            id="consultationNotes"
+                            name="notes"
+                            class="form-control"
+                            rows="5"
+                            placeholder="Enter consultation notes..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="consultationPrescription">
+                            Prescription / Recommendations
+                        </label>
+
+
+                        <textarea
+                            id="consultationPrescription"
+                            name="prescription"
+                            class="form-control"
+                            rows="4"
+                            placeholder="Enter medicines or recommendations..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="form-actions">
+
+
+                        <button
+                            type="button"
+                            class="btn btn-outline"
+                            id="closeConsultation"
+                        >
+
+                            Cancel
+
+                        </button>
+
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Save Consultation
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 HealSphere. All rights reserved.
+            </p>
+
+
+            <a href="../../pages/contact.html">
+                Need Help?
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="../../js/api.js"></script>
+
+    <script src="../../js/auth.js"></script>
+
+    <script src="../../js/main.js"></script>
+
+    <script src="../../js/utils.js"></script>
+
+    <script src="../../js/doctor/appointments.js"></script>
+
+
+
+    <!-- =====================================================
+         DYNAMIC LOGGED-IN DOCTOR NAME
+         ===================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const user =
+                    typeof HealSphereUtils !== "undefined"
+                        ? HealSphereUtils.getCurrentUser()
+                        : null;
+
+
+                if (!user?.name) {
+                    return;
+                }
+
+
+                const doctorName =
+                    user.name.trim();
+
+
+                const displayName =
+                    doctorName
+                        .toLowerCase()
+                        .startsWith("dr.")
+                        ? doctorName
+                        : `Dr. ${doctorName}`;
+
+
+                const navName =
+                    document.getElementById(
+                        "doctorNavName"
+                    );
+
+
+                if (navName) {
+
+                    navName.textContent =
+                        displayName;
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

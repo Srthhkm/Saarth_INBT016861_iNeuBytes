@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | HealSphere</title>
+
+    <meta
+        name="description"
+        content="HealSphere administrator dashboard."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <!-- =====================================================
+         ADMIN DASHBOARD LAYOUT
+         ===================================================== -->
+
+    <div class="dashboard-layout">
+
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+            <div class="sidebar-header">
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <div class="sidebar-section-title">
+                    Main
+                </div>
+
+
+                <a
+                    href="dashboard.html"
+                    class="sidebar-link active"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Management
+                </div>
+
+
+                <a
+                    href="doctors.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <span>Doctors</span>
+                </a>
+
+
+                <a
+                    href="patients.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-users"></i>
+                    <span>Patients</span>
+                </a>
+
+
+                <a
+                    href="appointments.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                </a>
+
+
+                <a
+                    href="departments.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-building"></i>
+                    <span>Departments</span>
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Insights
+                </div>
+
+
+                <a
+                    href="reports.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Reports</span>
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Account
+                </div>
+
+
+                <a
+                    href="profile.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <a
+                    href="../../index.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Website</span>
+                </a>
+
+                 <button
+                    type="button"
+                    class="sidebar-link logout-btn"
+                    id="logoutBtn"
+                    aria-label="Logout"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN AREA
+             ===================================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- TOPBAR -->
+
+            <header class="dashboard-topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggle"
+                        aria-label="Toggle sidebar"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <h1>
+                            Admin Dashboard
+                        </h1>
+
+                        <p>
+                            Overview of HealSphere healthcare operations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <a
+                        href="#messagesSection"
+                        class="messages-btn"
+                        aria-label="Messages"
+                    >
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+
+
+                    <a
+                        href="profile.html"
+                        class="user-menu"
+                    >
+
+                        <div class="user-avatar">
+                            A
+                        </div>
+
+                        <div class="user-info">
+
+                            <strong>
+                                Admin
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="dashboard-content">
+
+
+                <!-- =================================================
+                     WELCOME
+                     ================================================= -->
+
+                <section class="dashboard-section">
+
+                    <div class="dashboard-card">
+
+                        <div class="card-body">
+
+                            <span class="section-subtitle">
+                                HealSphere Administration
+                            </span>
+
+                            <h2>
+                                Welcome back, Admin
+                            </h2>
+
+                            <p>
+                                Manage doctors, patients, appointments,
+                                departments and healthcare reports from
+                                one place.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     STATISTICS
+                     ================================================= -->
+
+                <section class="dashboard-section">
+
+                    <div class="dashboard-section-header">
+
+                        <div>
+
+                            <h2>
+                                System Overview
+                            </h2>
+
+                            <p>
+                                Current healthcare management statistics.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stats-grid">
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-user-doctor"></i>
+
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Total Doctors
+                                </span>
+
+                                <strong id="totalDoctors">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-users"></i>
+
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Total Patients
+                                </span>
+
+                                <strong id="totalPatients">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon warning">
+
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Total Appointments
+                                </span>
+
+                                <strong id="totalAppointments">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon success">
+
+                                <i class="fa-solid fa-building"></i>
+
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Departments
+                                </span>
+
+                                <strong id="totalDepartments">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     QUICK ACTIONS
+                     ================================================= -->
+
+                <section class="dashboard-section">
+
+                    <div class="dashboard-section-header">
+
+                        <div>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                            <p>
+                                Frequently used administration tools.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+
+                        <a
+                            href="doctors.html"
+                            class="quick-action"
+                        >
+
+                            <div class="quick-action-icon">
+
+                                <i class="fa-solid fa-user-doctor"></i>
+
+                            </div>
+
+                            <strong>
+                                Manage Doctors
+                            </strong>
+
+                        </a>
+
+
+                        <a
+                            href="patients.html"
+                            class="quick-action"
+                        >
+
+                            <div class="quick-action-icon">
+
+                                <i class="fa-solid fa-users"></i>
+
+                            </div>
+
+                            <strong>
+                                Manage Patients
+                            </strong>
+
+                        </a>
+
+
+                        <a
+                            href="appointments.html"
+                            class="quick-action"
+                        >
+
+                            <div class="quick-action-icon">
+
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                            </div>
+
+                            <strong>
+                                Manage Appointments
+                            </strong>
+
+                        </a>
+
+
+                        <a
+                            href="departments.html"
+                            class="quick-action"
+                        >
+
+                            <div class="quick-action-icon">
+
+                                <i class="fa-solid fa-building"></i>
+
+                            </div>
+
+                            <strong>
+                                Manage Departments
+                            </strong>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     APPOINTMENT SUMMARY
+                     ================================================= -->
+
+                <section class="dashboard-section">
+
+                    <div class="dashboard-section-header">
+
+                        <div>
+
+                            <h2>
+                                Appointment Overview
+                            </h2>
+
+                            <p>
+                                Current appointment status distribution.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="appointments.html"
+                            class="btn btn-outline"
+                        >
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="stats-grid">
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon warning">
+
+                                <i class="fa-regular fa-clock"></i>
+
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Pending
+                                </span>
+
+                                <strong id="pendingAppointments">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Confirmed
+                                </span>
+
+                                <strong id="confirmedAppointments">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon success">
+
+                                <i class="fa-solid fa-check-double"></i>
+
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Completed
+                                </span>
+
+                                <strong id="completedAppointments">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="stat-card">
+
+                            <div class="stat-icon danger">
+
+                                <i class="fa-solid fa-circle-xmark"></i>
+
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Cancelled
+                                </span>
+
+                                <strong id="cancelledAppointments">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     MESSAGE MANAGEMENT
+                     ================================================= -->
+
+                <section
+                    class="dashboard-section"
+                    id="messagesSection"
+                >
+
+                    <div class="dashboard-section-header">
+
+                        <div>
+                            <h2>Message Management</h2>
+                            <p>Review enquiries and reply directly by email.</p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-outline"
+                            id="refreshMessagesBtn"
+                        >
+                            <i class="fa-solid fa-rotate"></i>
+                            Refresh
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="dashboard-card"
+                        id="adminMessagesList"
+                    >
+                        <p>Loading messages...</p>
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/notifications.js"></script>
+    <script src="../../js/utils.js"></script>
+
+    <script src="../../js/admin/dashboard.js"></script>
+    <script src="../../js/admin/messages.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,559 @@
+<!-- PATIENT PROFILE -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Profile | HealSphere</title>
+
+    <meta
+        name="description"
+        content="Manage your HealSphere patient profile."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+    rel="stylesheet"
+    href="../../css/dashboard.css"
+    >
+    
+    <link
+        rel="stylesheet"
+        href="../../css/patient.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <nav class="dashboard-navbar">
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+
+                <div class="dashboard-nav-links">
+
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+
+                    <a href="book-appointment.html">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        Book Appointment
+                    </a>
+
+                    <a href="appointments.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        My Appointments
+                    </a>
+
+                    <a href="medical-records.html">
+                        <i class="fa-solid fa-file-medical"></i>
+                        Medical Records
+                    </a>
+
+                    <a
+                        href="profile.html"
+                        class="active"
+                    >
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+
+                </div>
+
+
+                <div class="dashboard-user">
+
+                    <a
+                        href="profile.html"
+                        class="user-profile active"
+                    >
+
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <span>
+                            Patient
+                        </span>
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                        aria-label="Logout"
+                    >
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+        <div class="container">
+
+            <section class="dashboard-page-heading">
+
+                <span class="section-subtitle">
+                    Account Settings
+                </span>
+
+                <h1>
+                    My Profile
+                </h1>
+
+                <p>
+                    View and manage your personal information.
+                </p>
+
+            </section>
+
+
+            <div class="profile-layout">
+
+                <!-- =================================================
+                     PROFILE SUMMARY
+                     ================================================= -->
+
+                <aside class="patient-card profile-sidebar">
+
+                    <div class="profile-avatar-large">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <h2 id="profileDisplayName">
+                        Patient
+                    </h2>
+
+
+                    <span class="profile-role">
+                        Patient
+                    </span>
+
+
+                    <div class="profile-sidebar-divider"></div>
+
+
+                    <div class="profile-sidebar-item">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span id="profileDisplayEmail">
+                            patient@example.com
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-sidebar-item">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <span id="profileDisplayPhone">
+                            +91 XXXXX XXXXX
+                        </span>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- =================================================
+                     PROFILE FORM
+                     ================================================= -->
+
+                <section class="patient-card profile-form-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="section-subtitle">
+                                Personal Information
+                            </span>
+
+                            <h2>
+                                Profile Details
+                            </h2>
+
+                        </div>
+
+
+                        <div class="card-header-icon">
+
+                            <i class="fa-solid fa-user-pen"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="profileForm"
+                        class="patient-form"
+                    >
+
+                        <div class="form-group">
+
+                            <label for="profileName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileName"
+                                name="name"
+                                class="form-control"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="profileEmail">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="profileEmail"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="profilePhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="profilePhone"
+                                    name="phone"
+                                    class="form-control"
+                                    placeholder="Enter your phone number"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="profileDob">
+                                    Date of Birth
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="profileDob"
+                                    name="dob"
+                                    class="form-control"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="profileGender">
+                                    Gender
+                                </label>
+
+                                <select
+                                    id="profileGender"
+                                    name="gender"
+                                    class="form-control"
+                                >
+
+                                    <option value="">
+                                        Select Gender
+                                    </option>
+
+                                    <option value="Male">
+                                        Male
+                                    </option>
+
+                                    <option value="Female">
+                                        Female
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                    <option value="Prefer not to say">
+                                        Prefer not to say
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="profileAddress">
+                                Address
+                            </label>
+
+                            <textarea
+                                id="profileAddress"
+                                name="address"
+                                class="form-control"
+                                rows="4"
+                                placeholder="Enter your address"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-section-title">
+
+                            <i class="fa-solid fa-phone-volume"></i>
+
+                            <span>
+                                Emergency Contact
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="emergencyName">
+                                    Contact Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="emergencyName"
+                                    name="emergencyName"
+                                    class="form-control"
+                                    placeholder="Emergency contact name"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="emergencyPhone">
+                                    Contact Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="emergencyPhone"
+                                    name="emergencyPhone"
+                                    class="form-control"
+                                    placeholder="Emergency contact number"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="reset"
+                                class="btn btn-outline"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+
+                                <i class="fa-solid fa-floppy-disk"></i>
+
+                                Save Changes
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+
+            <!-- =================================================
+                 ACCOUNT SECURITY
+                 ================================================= -->
+
+            <section class="patient-card security-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Security
+                        </span>
+
+                        <h2>
+                            Account Security
+                        </h2>
+
+                    </div>
+
+
+                    <div class="card-header-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-row">
+
+                    <div>
+
+                        <h3>
+                            Password
+                        </h3>
+
+                        <p>
+                            Keep your account secure by using a strong
+                            and unique password.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="changePasswordBtn"
+                    >
+
+                        <i class="fa-solid fa-key"></i>
+
+                        Change Password
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 HealSphere. All rights reserved.
+            </p>
+
+            <a href="../../pages/contact.html">
+                Need Help?
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/utils.js"></script>
+    
+    <script src="../../js/patient/profile.js"></script>
+
+</body>
+
+</html>

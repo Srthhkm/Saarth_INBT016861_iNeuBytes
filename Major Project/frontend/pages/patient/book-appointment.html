@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Book Appointment | HealSphere</title>
+
+    <meta
+        name="description"
+        content="Book a healthcare appointment through HealSphere."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/patient.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <nav class="dashboard-navbar">
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+
+                <div class="dashboard-nav-links">
+
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+
+                    <a
+                        href="book-appointment.html"
+                        class="active"
+                    >
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        Book Appointment
+                    </a>
+
+                    <a href="appointments.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        My Appointments
+                    </a>
+
+                    <a href="medical-records.html">
+                        <i class="fa-solid fa-file-medical"></i>
+                        Medical Records
+                    </a>
+
+                    <a href="profile.html">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+
+                </div>
+
+
+                <div class="dashboard-user">
+
+                    <a
+                        href="profile.html"
+                        class="user-profile"
+                    >
+
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <span>
+                            Patient
+                        </span>
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="logout-btn"
+                        id="logoutBtn"
+                        aria-label="Logout"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+        <div class="container">
+
+            <section class="dashboard-page-heading">
+
+                <span class="section-subtitle">
+                    Healthcare Services
+                </span>
+
+                <h1>
+                    Book an Appointment
+                </h1>
+
+                <p>
+                    Choose a department, doctor and convenient
+                    appointment time.
+                </p>
+
+            </section>
+
+
+            <div class="booking-layout">
+
+                <!-- =================================================
+                     BOOKING FORM
+                     ================================================= -->
+
+                <section class="patient-card booking-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h2>
+                                Appointment Details
+                            </h2>
+
+                            <p>
+                                Please provide the required information.
+                            </p>
+
+                        </div>
+
+                        <div class="card-header-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="appointmentForm"
+                        class="patient-form"
+                    >
+
+                        <!-- =================================================
+                             PATIENT INFORMATION
+                             ================================================= -->
+
+                        <div class="form-section-title">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <span>
+                                Patient Information
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="patientName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="patientName"
+                                    name="patientName"
+                                    class="form-control"
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="patientPhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="patientPhone"
+                                    name="phone"
+                                    class="form-control"
+                                    placeholder="Enter your phone number"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="patientEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="patientEmail"
+                                name="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- =================================================
+                             DOCTOR & DEPARTMENT
+                             ================================================= -->
+
+                        <div class="form-section-title">
+
+                            <i class="fa-solid fa-user-doctor"></i>
+
+                            <span>
+                                Doctor & Department
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <!-- Department -->
+
+                            <div class="form-group">
+
+                                <label for="department">
+                                    Department
+                                </label>
+
+                                <select
+                                    id="department"
+                                    name="department"
+                                    class="form-control"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Doctor -->
+
+                            <div class="form-group">
+
+                                <label for="doctor">
+                                    Preferred Doctor
+                                </label>
+
+                                <select
+                                    id="doctor"
+                                    name="doctor"
+                                    class="form-control"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select Doctor
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             DATE & TIME
+                             ================================================= -->
+
+                        <div class="form-section-title">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            <span>
+                                Date & Time
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="appointmentDate">
+                                    Preferred Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="appointmentDate"
+                                    name="date"
+                                    class="form-control"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="appointmentTime">
+                                    Preferred Time
+                                </label>
+
+                                <select
+                                    id="appointmentTime"
+                                    name="time"
+                                    class="form-control"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select Time
+                                    </option>
+
+                                    <option value="09:00 AM">
+                                        09:00 AM
+                                    </option>
+
+                                    <option value="10:00 AM">
+                                        10:00 AM
+                                    </option>
+
+                                    <option value="11:00 AM">
+                                        11:00 AM
+                                    </option>
+
+                                    <option value="12:00 PM">
+                                        12:00 PM
+                                    </option>
+
+                                    <option value="02:00 PM">
+                                        02:00 PM
+                                    </option>
+
+                                    <option value="03:00 PM">
+                                        03:00 PM
+                                    </option>
+
+                                    <option value="04:00 PM">
+                                        04:00 PM
+                                    </option>
+
+                                    <option value="05:00 PM">
+                                        05:00 PM
+                                    </option>
+
+                                    <option value="06:00 PM">
+                                        06:00 PM
+                                    </option>
+
+                                    <option value="07:00 PM">
+                                        07:00 PM
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             VISIT DETAILS
+                             ================================================= -->
+
+                        <div class="form-section-title">
+
+                            <i class="fa-solid fa-notes-medical"></i>
+
+                            <span>
+                                Visit Details
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="appointmentReason">
+                                Reason for Visit
+                            </label>
+
+                            <textarea
+                                id="appointmentReason"
+                                name="message"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Briefly describe the reason for your visit..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             FORM ACTIONS
+                             ================================================= -->
+
+                        <div class="form-actions">
+
+                            <a
+                                href="dashboard.html"
+                                class="btn btn-outline"
+                            >
+                                Cancel
+                            </a>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                                Confirm Appointment
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- =================================================
+                     BOOKING INFORMATION
+                     ================================================= -->
+
+                <aside class="booking-sidebar">
+
+                    <div class="patient-card info-card">
+
+                        <div class="info-card-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+
+                        <h3>
+                            Before You Book
+                        </h3>
+
+                        <ul class="info-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Select your preferred department.
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Choose an available doctor.
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Select your preferred date and time.
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                Provide a brief reason for your visit.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="patient-card help-card">
+
+                        <div class="help-card-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+
+                        <h3>
+                            Need Help?
+                        </h3>
+
+                        <p>
+                            Contact the HealSphere support team if
+                            you need assistance with your appointment.
+                        </p>
+
+                        <a
+                            href="../../pages/contact.html"
+                            class="text-link"
+                        >
+                            Contact Support
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- =================================================
+                 APPOINTMENT SUMMARY
+                 ================================================= -->
+
+            <section
+                class="patient-card appointment-summary"
+                id="appointmentSummary"
+                style="display: none;"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-subtitle">
+                            Booking Complete
+                        </span>
+
+                        <h2>
+                            Appointment Confirmed
+                        </h2>
+
+                    </div>
+
+                    <div class="success-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="summaryContainer"
+                    class="summary-container"
+                ></div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="dashboard-footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 HealSphere. All rights reserved.
+            </p>
+
+            <a href="../../pages/contact.html">
+                Need Help?
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/utils.js"></script>
+
+    <script src="../../js/patient/booking.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,507 @@
+/* =========================================================
+   HEALSPHERE - ADMIN STYLES
+   ========================================================= */
+
+
+/* ---------- Admin Welcome ---------- */
+
+.admin-welcome {
+    padding: 28px;
+    border-radius: var(--radius);
+    background: linear-gradient(
+        135deg,
+        #102a43,
+        var(--primary)
+    );
+    color: var(--white);
+}
+
+.admin-welcome h2 {
+    margin-bottom: 5px;
+    font-size: 1.45rem;
+}
+
+.admin-welcome p {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.85rem;
+}
+
+
+/* ---------- Admin Statistics ---------- */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.admin-stat-card {
+    position: relative;
+    padding: 22px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.admin-stat-card::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    right: -35px;
+    bottom: -35px;
+    border-radius: 50%;
+    background: var(--primary-light);
+}
+
+.admin-stat-card .stat-icon {
+    margin-bottom: 15px;
+}
+
+.admin-stat-card .stat-info strong {
+    font-size: 1.7rem;
+}
+
+
+/* ---------- Management Toolbar ---------- */
+
+.admin-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.admin-toolbar-left,
+.admin-toolbar-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+
+/* ---------- Management Forms ---------- */
+
+.management-form {
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.management-form h3 {
+    margin-bottom: 22px;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.management-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+
+/* ---------- Admin Action Buttons ---------- */
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--text);
+    transition: all var(--transition);
+}
+
+.action-btn:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.action-btn.edit:hover {
+    border-color: var(--warning);
+    background: #fff7e6;
+    color: var(--warning);
+}
+
+.action-btn.delete:hover {
+    border-color: var(--danger);
+    background: #fdecef;
+    color: var(--danger);
+}
+
+
+/* ---------- Department Cards ---------- */
+
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.department-card {
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+}
+
+.department-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.department-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 1.15rem;
+}
+
+.department-card h3 {
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.department-card p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 0.76rem;
+}
+
+.department-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 0.72rem;
+}
+
+
+/* ---------- Reports ---------- */
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.report-card {
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.report-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.report-card-header h3 {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.report-value {
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.report-label {
+    color: var(--text-light);
+    font-size: 0.75rem;
+}
+
+
+/* ---------- Progress Bars ---------- */
+
+.progress-item {
+    margin-bottom: 16px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    color: var(--text);
+    font-size: 0.75rem;
+}
+
+.progress-bar {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #edf1f5;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: var(--primary);
+}
+
+
+/* ---------- Analytics ---------- */
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.chart-placeholder {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    background: var(--background);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.chart-placeholder i {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+
+/* ---------- Admin Table ---------- */
+
+.admin-table .doctor-cell,
+.admin-table .patient-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-avatar {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.table-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-table .person-name strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 0.78rem;
+}
+
+.admin-table .person-name span {
+    color: var(--text-light);
+    font-size: 0.68rem;
+}
+
+
+/* ---------- Modal ---------- */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 35, 55, 0.55);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    width: min(100%, 600px);
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h3 {
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--background);
+    color: var(--text);
+}
+
+.modal-body {
+    padding: 22px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 18px 22px;
+    border-top: 1px solid var(--border);
+}
+
+/* ---------- Admin Logout Button ---------- */
+
+.sidebar-footer .logout-btn {
+    color: #2563eb;
+    background: transparent;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+
+.sidebar-footer .logout-btn:hover {
+    color: #ffffff;
+    background: #2563eb;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .department-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-toolbar-left,
+    .admin-toolbar-right {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .admin-stats,
+    .department-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .management-form {
+        padding: 20px;
+    }
+
+    .management-form-footer {
+        flex-direction: column;
+    }
+
+    .management-form-footer .btn {
+        width: 100%;
+    }
+}
+
+.report-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.report-status-chart {
+    display: grid;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.report-bar-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 30px;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+.report-bar-track {
+    height: 9px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: var(--border);
+}
+
+.report-bar {
+    height: 100%;
+    border-radius: inherit;
+    background: var(--primary);
+}

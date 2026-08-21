@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Patient Management | HealSphere</title>
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <div class="dashboard-layout">
+
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a
+                    href="dashboard.html"
+                    class="logo"
+                >
+
+                    <img
+                        src="../../assets/images/logo.png"
+                        alt="HealSphere Logo"
+                    >
+
+                    <span>
+                        HealSphere
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <div class="sidebar-section-title">
+                    Main
+                </div>
+
+                <a
+                    href="dashboard.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Management
+                </div>
+
+                <a
+                    href="doctors.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <span>Doctors</span>
+                </a>
+
+                <a
+                    href="patients.html"
+                    class="sidebar-link active"
+                >
+                    <i class="fa-solid fa-users"></i>
+                    <span>Patients</span>
+                </a>
+
+                <a
+                    href="appointments.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                </a>
+
+                <a
+                    href="departments.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-building"></i>
+                    <span>Departments</span>
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Insights
+                </div>
+
+                <a
+                    href="reports.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Reports</span>
+                </a>
+
+
+                <div class="sidebar-section-title">
+                    Account
+                </div>
+
+                <a
+                    href="profile.html"
+                    class="sidebar-link"
+                >
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <main class="dashboard-main">
+
+
+            <header class="dashboard-topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggle"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="page-heading">
+
+                        <h1>
+                            Patient Management
+                        </h1>
+
+                        <p>
+                            Manage registered HealSphere patients.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <a
+                        href="profile.html"
+                        class="user-menu"
+                    >
+
+                        <div class="user-avatar">
+                            A
+                        </div>
+
+                        <div class="user-info">
+
+                            <strong>
+                                Admin
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+
+
+            <div class="dashboard-content">
+
+
+                <section class="dashboard-section">
+
+                    <div class="toolbar">
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="patientSearch"
+                                placeholder="Search patient..."
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="showPatientForm"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Add Patient
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <section
+                    class="dashboard-section hidden"
+                    id="patientFormContainer"
+                >
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <h3 id="patientFormTitle">
+                                Add Patient
+                            </h3>
+
+                            <button
+                                type="button"
+                                class="btn btn-outline"
+                                id="cancelPatientForm"
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <form id="patientForm">
+
+                                <input
+                                    type="hidden"
+                                    id="patientId"
+                                >
+
+
+                                <div class="form-group">
+
+                                    <label for="patientName">
+                                        Patient Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="patientName"
+                                        class="form-control"
+                                        placeholder="Full Name"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="patientEmail">
+                                        Email Address
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="patientEmail"
+                                        class="form-control"
+                                        placeholder="patient@example.com"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="patientPhone">
+                                        Phone Number
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="patientPhone"
+                                        class="form-control"
+                                        placeholder="+91 XXXXX XXXXX"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="patientPassword">
+                                        Temporary Password
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        id="patientPassword"
+                                        class="form-control"
+                                        placeholder="Required for new patients"
+                                        minlength="6"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="patientAge">
+                                        Age
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="patientAge"
+                                        class="form-control"
+                                        min="0"
+                                        max="120"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="patientGender">
+                                        Gender
+                                    </label>
+
+                                    <select
+                                        id="patientGender"
+                                        class="form-control"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Select Gender
+                                        </option>
+
+                                        <option value="Male">
+                                            Male
+                                        </option>
+
+                                        <option value="Female">
+                                            Female
+                                        </option>
+
+                                        <option value="Other">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="patientAddress">
+                                        Address
+                                    </label>
+
+                                    <textarea
+                                        id="patientAddress"
+                                        class="form-control"
+                                        rows="3"
+                                        placeholder="Patient address"
+                                        required
+                                    ></textarea>
+
+                                </div>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                >
+                                    Save Patient
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <section class="dashboard-section">
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <h3>
+                                Patients
+                            </h3>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table class="data-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Name
+                                        </th>
+
+                                        <th>
+                                            Email
+                                        </th>
+
+                                        <th>
+                                            Phone
+                                        </th>
+
+                                        <th>
+                                            Age
+                                        </th>
+
+                                        <th>
+                                            Gender
+                                        </th>
+
+                                        <th>
+                                            Actions
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="patientTableBody">
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <div
+                            class="empty-state hidden"
+                            id="noPatients"
+                        >
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <h3>
+                                No patients found
+                            </h3>
+
+                            <p>
+                                Try another search or add a new patient.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/utils.js"></script>
+
+    <script src="../../js/admin/patients.js"></script>
+
+</body>
+
+</html>
