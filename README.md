@@ -112,6 +112,13 @@ Default doctor emails:
 
 The password is the value of `DEFAULT_DOCTOR_PASSWORD`; the fallback development password is `HealSphere@123`.
 
+## Default Admin Credentials
+Following are the demo credentials to login as admin and verify functionality:
+
+Name - Admin Room
+Email - admin@healsphere.com
+Password - admin01
+
 ## API Overview
 
 - `/api/auth` - registration, login, current user, logout, password change
